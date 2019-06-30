@@ -1,0 +1,24 @@
+@mixin nav {
+
+.nav {
+	   list-style-type: none;
+       padding: 0;
+       text-align: center;
+       max-width: 100%;
+      
+       li:first-child {
+        background-color: $color;
+        border-radius: 5px;
+
+        @include a;       
+
+        }
+
+       li {
+         padding: 20px;
+       }
+
+	   @include nav-item;
+	}
+
+  }

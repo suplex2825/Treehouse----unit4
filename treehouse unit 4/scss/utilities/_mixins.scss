@@ -1,0 +1,78 @@
+
+@mixin media {
+
+  @media (min-width: $breakpoints) {
+	 .nav li {
+	   display: inline-block;
+	}
+
+	.container {
+	   width: 80%;
+	   margin: 0 auto;
+	}
+    
+    .grid__col--8:not(.theme__colors) {
+       max-width: 100%;
+       flex-basis: 66%;
+    }
+
+    .grid__col--4:not(.theme-colors) {
+       max-width: 100%;
+       flex-basis: 30%;
+    }
+    
+    .grid__col--6:not(.theme-colors) {
+       text-align: center;
+       .img--frame {
+          width: 65%;
+       }
+    }
+
+    .grid__col--12 {
+       @include flex;
+       @include flex-direction-row;
+       justify-content: center;
+       
+       button {
+        flex: 1;
+        margin-left: 20px;
+       }
+    }
+
+    .grid__col--7 {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .grid__col--4.theme__colors {
+        text-align: center;
+    }
+
+    .grid__col--3 {
+        text-align: center;
+    }
+
+    .grid__col--5 {
+        text-align: center;
+    }
+
+    .grid__col--8.theme__colors {
+        text-align: center;
+    }
+  }
+
+}
+
+@mixin flex {
+
+display: flex;
+
+}
+
+@mixin flex-direction-col {
+   flex-direction: column;
+}
+
+@mixin flex-direction-row {
+   flex-direction: row;
+}

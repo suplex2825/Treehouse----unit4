@@ -10,51 +10,21 @@
 
 // import components partials
 @import 'components/index';
+@import 'utilities/index';
+@import 'base/index';
 
 
-* {
-	box-sizing: border-box;
-}
 
- 
+    body {
+        font-family: $font;
+    }
+
+
 	.grid__col--3:not(.theme__colors) {
          text-align: center;
 	}
 
-	.nav {
-	   list-style-type: none;
-       padding: 0;
-       text-align: center;
-       max-width: 100%;
-      
-       li:first-child {
-        background-color: #7FFFD4;
-        border-radius: 5px;
-
-        a:link {
-           color: white;
-        }
-
-        a:visited {
-          color: white;
-        }
-       }
-
-       li {
-         padding: 20px;
-       }
-
-	   a {
-	     text-decoration: none;
-	     &:link {
-	       color: initial;
-	     }
-
-	     &:visited {
-	       color: initial;
-	     }
-	   }
-	}
+	@include nav;
 
     .card {
       line-height: 1.5;
@@ -62,9 +32,9 @@
   
 
       .blockquote {
-        font-size: 2em;
+        font-size: 20px;
         font-style: italic;
-        border-left: 10px solid #7FFFD4;
+        border-left: 10px solid $color;
         border-radius: 5px;
         padding: 25px;
       }
@@ -75,24 +45,14 @@
       }
 
       .headline--primary {
-         color: #7FFFD4;
+         color: $color;
          padding-left: 30px;
       }
 
       p {
-        .link {
-          text-decoration: none;
-          font-weight: bold;
-
-         &:link {
-            color: #00FFFF;
-         }
-
-         &:visited {
-            color: #00FFFF;
-         }
+        @include link;
        }
-      }
+      
     }
 
 .container {
@@ -100,119 +60,23 @@
 	margin: 0 auto;
 }
 
-.form {
-	display: flex;
+@include form;
 
-	.theme__colors {
-	background-color: #00FFFF;
-	color: white;
-	border-radius: 5px;
-	padding: 15px;
-	border-style: none;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-	flex-direction: column;
-	.img--avatar {
-	   align-self: center;
-	}
-
-	.form__input {
-	  border: none;
-	  border-bottom: 5px solid #7FFFD4;
-	  margin-left: 15px;
-	  margin-right: 15px;
-
-	  &[placeholder*="Username"] {
-	     margin-bottom: 50px;
-	  }
-
-	  &[placeholder*="Password"] {
-	     margin-bottom: 20px;
-	  }
-
-	  &::placeholder {
-	     opacity: 0;
-	  }
-	}
-
-	.form__label--hidden {
-	   font-weight: bold;
-	   margin-left: 30px;
-	}
-}
-
-.img--frame {
-	width: 99%;
-}
 
 .grid__col--6:not(.theme__colors) {
 	align-self: center;
 }
 
-.img--frame {
-	border: 1px solid #DCDCDC;
-	padding: 10px;
-	margin-bottom: 20px;
-}
 
 .headline--secondary {
 	font-weight: normal;
 }
 
 .grid__col--12 {
-    display: flex;
-	flex-direction: column;
+    @include flex;
+	@include flex-direction-col;
 
-	.btn--default {
-	   padding: 15px;
-	   background-color: #00FFFF;
-	   color: white;
-	   border-style: none;
-	   border-radius: 5px;
-	   text-transform: uppercase;
-	   margin-bottom: 25px;
-	}
-
-	.btn--success {
-	   padding: 15px;
-	   background-color: #228B22;
-	   color: white;
-	   border-style: none;
-	   border-radius: 5px;
-	   text-transform: uppercase;
-	   margin-bottom: 25px;
-	}
-
-	.btn--error {
-	   padding: 15px;
-	   background-color: #B22222;
-	   color: white;
-	   border-style: none;
-	   border-radius: 5px;
-	   text-transform: uppercase;
-	   margin-bottom: 25px;
-	}
-
-	.btn--warning {
-	   padding: 15px;
-	   background-color: #FF7F50;
-	   color: white;
-	   border-style: none;
-	   border-radius: 5px;
-	   text-transform: uppercase;
-	   margin-bottom: 25px;
-	}
-
-	.btn--info {
-	   padding: 15px;
-	   background-color: #8A2BF2;
-	   color: white;
-	   border-style: none;
-	   border-radius: 5px;
-	   text-transform: uppercase;
-	   margin-bottom: 25px;
-	}
+	@include button;
 }
 
 
@@ -229,6 +93,7 @@
 }
 
 .grid__col--4.theme__colors {
+	   flex: 1;
 	   padding: 15px;
 	   background-color: #00FFFF;
 	   border-radius: 5px;
@@ -259,3 +124,4 @@
 } 
 
 
+@include media;
