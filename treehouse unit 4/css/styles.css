@@ -1,3 +1,9 @@
+.img--frame {
+  width: 99%; }
+
+* {
+  box-sizing: border-box; }
+
 .grid__row {
   padding: 1em 10px;
   display: flex;
@@ -101,12 +107,6 @@
 
 .img--frame {
   width: 99%; }
-
-.img--frame {
-  width: 99%; }
-
-* {
-  box-sizing: border-box; }
 
 body {
   font-family: "Noto Serif", serif; }
